@@ -1020,6 +1020,87 @@
     100% { transform: translateX(-50%); }
   }
 
+  /* ---------- WhatsApp button ---------- */
+  .btn-whatsapp {
+    background: #25D366;
+    color: #FFFFFF;
+  }
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,.3);
+  }
+
+  /* ---------- Expandable Service Cards ---------- */
+  .svc-expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    padding: 6px 14px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,149,60,.35);
+    border-radius: 999px;
+    cursor: pointer;
+    background: none;
+    transition: background .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .svc-expand-btn:hover {
+    background: rgba(200,149,60,.1);
+    border-color: var(--gold);
+  }
+  .svc-expand-btn .arrow {
+    display: inline-block;
+    transition: transform .3s ease;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .svc-card.expanded .svc-expand-btn .arrow {
+    transform: rotate(180deg);
+  }
+  .svc-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, opacity .3s ease;
+    opacity: 0;
+  }
+  .svc-card.expanded .svc-details {
+    max-height: 500px;
+    opacity: 1;
+  }
+  .svc-details-inner {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px dashed rgba(139,149,165,.18);
+  }
+  .svc-details-inner ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .svc-details-inner li {
+    font-size: 13px;
+    color: var(--white-soft);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+  .svc-details-inner li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--teal-bright);
+    font-size: 9px;
+    top: 3px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
@@ -1031,17 +1112,16 @@
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#top" class="nav-brand" aria-label="LEBRONES SERVICES — Inicio">
-      <svg class="mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-        <g stroke="#8B95A5" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-          <!-- right (back) larger building: peaks upper-left, slopes down to right -->
-          <path d="M48 88 L48 28 L80 36 L80 88 Z"/>
-          <!-- left (front) smaller building: peaks upper-right, slopes down to left -->
-          <path d="M22 88 L22 56 L48 48 L48 88 Z"/>
+      <svg class="mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <!-- Building outline -->
+        <g stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none">
+          <path d="M55 100 L55 35 L85 42 L85 100 Z"/>
+          <path d="M30 100 L30 62 L55 54 L55 100 Z"/>
         </g>
-        <!-- bigger 4-point sparkle (upper-left) -->
-        <path d="M20 14 L21.4 20.6 L28 22 L21.4 23.4 L20 30 L18.6 23.4 L12 22 L18.6 20.6 Z" fill="#8B95A5"/>
-        <!-- smaller 4-point sparkle (right of big one) -->
-        <path d="M33 31 L33.7 33.8 L36.5 34.5 L33.7 35.2 L33 38 L32.3 35.2 L29.5 34.5 L32.3 33.8 Z" fill="#8B95A5"/>
+        <!-- Bigger 4-point sparkle -->
+        <path d="M28 18 L30 26.5 L38.5 28.5 L30 30.5 L28 39 L26 30.5 L17.5 28.5 L26 26.5 Z" fill="#FFFFFF"/>
+        <!-- Smaller 4-point sparkle -->
+        <path d="M42 38 L43 42 L47 43 L43 44 L42 48 L41 44 L37 43 L41 42 Z" fill="#FFFFFF"/>
       </svg>
       <span class="wm">LEBRONES SERVICES<small>SERVICIOS INTEGRALES</small></span>
     </a>
@@ -1086,17 +1166,13 @@
   <div class="hero-content stagger" id="heroStagger" data-parallax="-0.08">
 
     <!-- Logo full -->
-    <svg class="logo-big" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <g stroke="#8B95A5" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
-        <!-- right (back) larger building -->
-        <path d="M48 88 L48 28 L80 36 L80 88 Z"/>
-        <!-- left (front) smaller building -->
-        <path d="M22 88 L22 56 L48 48 L48 88 Z"/>
+    <svg class="logo-big" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+      <g stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
+        <path d="M55 100 L55 35 L85 42 L85 100 Z"/>
+        <path d="M30 100 L30 62 L55 54 L55 100 Z"/>
       </g>
-      <!-- bigger 4-point sparkle -->
-      <path d="M20 14 L21.4 20.6 L28 22 L21.4 23.4 L20 30 L18.6 23.4 L12 22 L18.6 20.6 Z" fill="#8B95A5"/>
-      <!-- smaller 4-point sparkle -->
-      <path d="M33 31 L33.7 33.8 L36.5 34.5 L33.7 35.2 L33 38 L32.3 35.2 L29.5 34.5 L32.3 33.8 Z" fill="#8B95A5"/>
+      <path d="M28 18 L30 26.5 L38.5 28.5 L30 30.5 L28 39 L26 30.5 L17.5 28.5 L26 26.5 Z" fill="#FFFFFF"/>
+      <path d="M42 38 L43 42 L47 43 L43 44 L42 48 L41 44 L37 43 L41 42 Z" fill="#FFFFFF"/>
     </svg>
 
     <h2 class="brand-text" aria-label="LEBRONES SERVICES">
@@ -1115,6 +1191,10 @@
     <div class="ctas">
       <a href="#servicios" class="btn btn-gold">Ver servicios</a>
       <a href="#contacto" class="btn btn-ghost">Contáctenos</a>
+      <a href="https://wa.me/18492552077?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20LEBRONES%20SERVICES" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -1180,10 +1260,30 @@
             <path d="M22 26 H28"/>
           </svg>
         </div>
-        <h3>Fumigación y control de plagas</h3>
+        <h3>Fumigacion y control de plagas</h3>
         <p>Control integrado de plagas para oficinas, almacenes e instalaciones industriales. Personal certificado y productos autorizados y biodegradables.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Control de roedores</li>
+              <li>Diagnostico inicial gratis</li>
+              <li>Termitas de madera</li>
+              <li>Tratamiento inyectado para muebles y estructuras</li>
+              <li>Jardineria sanitaria</li>
+              <li>Fumigacion de areas verdes contra mosquitos</li>
+              <li>Fumigacion contra cucarachas</li>
+              <li>Fumigacion fria ULV ultra fria (no mancha)</li>
+              <li>Desinfeccion contra insectos rastreros y voladores</li>
+              <li>Desinfeccion y sanitizacion: bacterias y hongos</li>
+              <li>Fumigacion para mercancias y contenedores</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Nebulización</span><span>Control de termitas</span><span>Certificación</span>
+          <span>Nebulizacion</span><span>Control de termitas</span><span>Certificacion</span>
         </div>
       </article>
 
@@ -1199,13 +1299,29 @@
           </svg>
         </div>
         <h3>Limpieza empresarial</h3>
-        <p>Limpieza general y especializada para entornos corporativos. Oficinas, recepciones, comedores. Desinfección de áreas de alto contacto y cristalización de pisos.</p>
+        <p>Limpieza general y especializada para entornos corporativos. Oficinas, recepciones, comedores. Desinfeccion de areas de alto contacto y cristalizacion de pisos.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Limpieza diaria, semanal, quincenal y mensual</li>
+              <li>Limpieza profunda</li>
+              <li>Limpieza de cristales</li>
+              <li>Limpieza de areas especiales: banos, cocinas</li>
+              <li>Cristales de altura con andamios</li>
+              <li>Planes ejecutivos y planes premium</li>
+              <li>Limpieza de mobiliario y alfombras</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Limpieza diaria</span><span>Desinfección</span><span>Cristalización</span>
+          <span>Limpieza diaria</span><span>Desinfeccion</span><span>Cristalizacion</span>
         </div>
       </article>
 
-      <!-- 3 AC -->
+      <!-- 3 Alianzas Estratégicas - JOMLIA -->
       <article class="svc-card reveal" data-delay="3">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1219,9 +1335,24 @@
           </svg>
         </div>
         <h3>Aires acondicionados</h3>
-        <p>Instalación y mantenimiento preventivo y correctivo de sistemas HVAC. Limpieza de filtros, revisión de equipos, diagnóstico y reparación.</p>
+        <p>Representante oficial de <strong>JOMLIA Solution Services</strong>. Brindamos instalacion, mantenimiento preventivo y correctivo de sistemas HVAC a traves de nuestra alianza estrategica.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Instalacion de equipos split, cassette e industriales</li>
+              <li>Mantenimiento preventivo y correctivo</li>
+              <li>Limpieza de ductos y filtros</li>
+              <li>Recarga de gas refrigerante</li>
+              <li>Diagnostico y reparacion</li>
+              <li>Alianza con JOMLIA Solution Services</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Instalación</span><span>Preventivo</span><span>Correctivo</span>
+          <span>Alianza estrategica</span><span>JOMLIA</span><span>HVAC</span>
         </div>
       </article>
 
@@ -1232,8 +1363,21 @@
             <path d="M26 6 L12 26 H22 L20 42 L36 22 H26 L28 6 Z"/>
           </svg>
         </div>
-        <h3>Plantas eléctricas</h3>
-        <p>Mantenimiento preventivo y correctivo de plantas eléctricas. Garantizamos el funcionamiento continuo de su respaldo energético en todo momento.</p>
+        <h3>Plantas electricas</h3>
+        <p>Mantenimiento preventivo y correctivo de plantas electricas. Garantizamos el funcionamiento continuo de su respaldo energetico en todo momento.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Mantenimiento de generadores diesel y gas</li>
+              <li>Pruebas de carga y transferencia</li>
+              <li>Servicio de emergencia 24/7</li>
+              <li>Monitoreo y diagnostico</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
           <span>Preventivo</span><span>Correctivo</span><span>Respaldo 24/7</span>
         </div>
@@ -1249,10 +1393,24 @@
             <path d="M14 40 H34"/>
           </svg>
         </div>
-        <h3>Jardinería corporativa</h3>
-        <p>Diseño, instalación y mantenimiento de áreas verdes. Poda, riego, abonado, control fitosanitario y sistemas de riego automatizado.</p>
+        <h3>Jardineria corporativa</h3>
+        <p>Diseno, instalacion y mantenimiento de areas verdes. Poda, riego, abonado, control fitosanitario y sistemas de riego automatizado.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Diseno y mantenimiento de areas verdes</li>
+              <li>Poda ornamental y control fitosanitario</li>
+              <li>Instalacion de sistemas de riego</li>
+              <li>Abonado y fertilizacion programada</li>
+              <li>Corte de cesped y limpieza de jardines</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Diseño</span><span>Mantenimiento</span><span>Riego automatizado</span>
+          <span>Diseno</span><span>Mantenimiento</span><span>Riego automatizado</span>
         </div>
       </article>
 
@@ -1267,9 +1425,23 @@
           </svg>
         </div>
         <h3>Outsourcing de personal</h3>
-        <p>Suministro de personal capacitado, uniformado y supervisado para servicios generales. Un solo interlocutor para toda su operación.</p>
+        <p>Suministro de personal capacitado, uniformado y supervisado para servicios generales. Un solo interlocutor para toda su operacion.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Seleccion y contratacion de personal operativo</li>
+              <li>Gestion de nomina y beneficios</li>
+              <li>Sustitucion inmediata garantizada 24/7</li>
+              <li>Supervision constante con checklists</li>
+              <li>Reportes mensuales de gestion</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Personal calificado</span><span>Supervisión</span><span>Reportes mensuales</span>
+          <span>Personal calificado</span><span>Supervision</span><span>Reportes mensuales</span>
         </div>
       </article>
 
@@ -1282,9 +1454,22 @@
           </svg>
         </div>
         <h3>Seguros corporativos</h3>
-        <p>Asesoría y colocación de pólizas colectivas e individuales para sus colaboradores. Activaciones con stand en sus instalaciones y capacitaciones INFOTEP sobre seguros para RRHH.</p>
+        <p>Asesoria y colocacion de polizas colectivas e individuales para sus colaboradores. Activaciones con stand en sus instalaciones y capacitaciones INFOTEP sobre seguros para RRHH.</p>
+        <button class="svc-expand-btn" onclick="this.closest('.svc-card').classList.toggle('expanded')">
+          Ver detalles <span class="arrow">&#9662;</span>
+        </button>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Polizas colectivas e individuales</li>
+              <li>Activaciones con stand en empresas</li>
+              <li>Capacitaciones INFOTEP sobre seguros</li>
+              <li>Servicio postventa para siniestros y renovacion</li>
+            </ul>
+          </div>
+        </div>
         <div class="svc-tags">
-          <span>Pólizas colectivas</span><span>Activaciones in-house</span><span>Capacitación INFOTEP</span>
+          <span>Polizas colectivas</span><span>Activaciones in-house</span><span>Capacitacion INFOTEP</span>
         </div>
       </article>
     </div>
@@ -1335,26 +1520,20 @@
     <div class="section-head reveal" style="margin-bottom:36px;">
       <p class="eyebrow">Confían en nosotros</p>
       <h2 style="margin-top:12px;">Cartera corporativa activa</h2>
-      <p>Acceso directo a más de 80 empresas en construcción, logística, retail, educación e industria.</p>
+      <p>Acceso directo a multiples empresas e instituciones en gobierno, salud, defensa y mas.</p>
     </div>
     <div class="clients-scroll">
       <div class="clients-track">
-        <span class="client-name">Cemento Panam</span>
-        <span class="client-name">Coca-Cola</span>
-        <span class="client-name">Unilever Caribe</span>
-        <span class="client-name">Smurfit Kappa</span>
         <span class="client-name">ETED</span>
-        <span class="client-name">Heinsen</span>
-        <span class="client-name">Barba</span>
-        <span class="client-name">Escuelas de Negocios</span>
-        <span class="client-name">Cemento Panam</span>
-        <span class="client-name">Coca-Cola</span>
-        <span class="client-name">Unilever Caribe</span>
-        <span class="client-name">Smurfit Kappa</span>
+        <span class="client-name">DNCD</span>
+        <span class="client-name">Armada de Republica Dominicana</span>
+        <span class="client-name">Hospital Dr. Ricardo Limardo</span>
+        <span class="client-name">JOMLIA Solution Services</span>
         <span class="client-name">ETED</span>
-        <span class="client-name">Heinsen</span>
-        <span class="client-name">Barba</span>
-        <span class="client-name">Escuelas de Negocios</span>
+        <span class="client-name">DNCD</span>
+        <span class="client-name">Armada de Republica Dominicana</span>
+        <span class="client-name">Hospital Dr. Ricardo Limardo</span>
+        <span class="client-name">JOMLIA Solution Services</span>
       </div>
     </div>
   </div>
@@ -1409,9 +1588,9 @@
           <path d="M7 31 C7 24 12 21 18 21 C24 21 29 24 29 31"/>
           <path d="M22 12 L24 14 L28 10"/>
         </svg>
-        <div class="num" data-target="80" data-prefix="+">0</div>
-        <h3>Empresas atendidas</h3>
-        <p>Cartera corporativa activa en construcción, logística, retail, educación e industria.</p>
+        <div class="num placeholder" aria-hidden="true"></div>
+        <h3>Multiples empresas</h3>
+        <p>Cartera corporativa activa en gobierno, salud, defensa, retail y educacion.</p>
       </div>
     </div>
   </div>
@@ -1436,8 +1615,8 @@
           <div><span class="k">Razón social</span><span class="v">LEBRONES SOLUTION SERVICE, SRL</span></div>
           <div><span class="k">Directora general</span><span class="v">Carmen Tanyelina Lebrón</span></div>
           <div><span class="k">Sede</span><span class="v">República Dominicana</span></div>
-          <div><span class="k">Infraestructura</span><span class="v">Oficina propia, salón de conferencias, 3 vehículos</span></div>
-          <div><span class="k">Equipo comercial</span><span class="v">5 ejecutivos B2B y B2C</span></div>
+          <div><span class="k">Infraestructura</span><span class="v">Oficina propia, salon de conferencias (15 personas), 2 vehiculos</span></div>
+          <div><span class="k">Equipo comercial</span><span class="v">2 ejecutivos B2B y B2C</span></div>
         </div>
 
         <p class="motto">“La tranquilidad de su operación, en manos expertas.”</p>
