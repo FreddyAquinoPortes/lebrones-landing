@@ -144,7 +144,7 @@
     gap: 24px;
   }
   .nav-brand { display: flex; align-items: center; gap: 12px; }
-  .nav-brand .mark { width: 34px; height: 34px; flex-shrink: 0; }
+  .nav-brand .mark { width: 36px; height: auto; flex-shrink: 0; object-fit: contain; }
   .nav-brand .wm {
     font-family: var(--font-display);
     font-weight: 700;
@@ -290,10 +290,11 @@
 
   .hero-content { position: relative; z-index: 2; max-width: 880px; width: 100%; will-change: transform; }
   .hero .logo-big {
-    width: clamp(180px, 22vw, 240px);
+    width: clamp(200px, 26vw, 320px);
     height: auto;
     margin: 0 auto 28px;
     display: block;
+    object-fit: contain;
   }
   .hero .brand-text {
     font-family: var(--font-display);
@@ -713,7 +714,7 @@
     align-items: start;
   }
   .foot-brand .mark-row { display: flex; align-items: center; gap: 12px; }
-  .foot-brand .mark { width: 36px; height: 36px; flex-shrink: 0; }
+  .foot-brand .mark { width: 38px; height: auto; flex-shrink: 0; object-fit: contain; }
   .foot-brand .wm {
     font-family: var(--font-display);
     font-weight: 700;
@@ -1192,17 +1193,7 @@
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#top" class="nav-brand" aria-label="LEBRONES SERVICES — Inicio">
-      <svg class="mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-        <!-- Building outline -->
-        <g stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none">
-          <path d="M55 100 L55 35 L85 42 L85 100 Z"/>
-          <path d="M30 100 L30 62 L55 54 L55 100 Z"/>
-        </g>
-        <!-- Bigger 4-point sparkle -->
-        <path d="M28 18 L30 26.5 L38.5 28.5 L30 30.5 L28 39 L26 30.5 L17.5 28.5 L26 26.5 Z" fill="#FFFFFF"/>
-        <!-- Smaller 4-point sparkle -->
-        <path d="M42 38 L43 42 L47 43 L43 44 L42 48 L41 44 L37 43 L41 42 Z" fill="#FFFFFF"/>
-      </svg>
+      <img class="mark" src="assets/logo_nav.png" alt="LEBRONES SERVICES" />
       <span class="wm">LEBRONES SERVICES<small>SERVICIOS INTEGRALES</small></span>
     </a>
 
@@ -1255,21 +1246,8 @@
   <div class="float-spk silver" data-parallax="-0.25" aria-hidden="true" style="bottom:12%; right:12%; font-size:20px; opacity:.3;">✦</div>
   <div class="hero-content stagger" id="heroStagger" data-parallax="-0.08">
 
-    <!-- Logo full -->
-    <svg class="logo-big" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-      <g stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" fill="none">
-        <path d="M55 100 L55 35 L85 42 L85 100 Z"/>
-        <path d="M30 100 L30 62 L55 54 L55 100 Z"/>
-      </g>
-      <path d="M28 18 L30 26.5 L38.5 28.5 L30 30.5 L28 39 L26 30.5 L17.5 28.5 L26 26.5 Z" fill="#FFFFFF"/>
-      <path d="M42 38 L43 42 L47 43 L43 44 L42 48 L41 44 L37 43 L41 42 Z" fill="#FFFFFF"/>
-    </svg>
-
-    <h2 class="brand-text" aria-label="LEBRONES SERVICES">
-      LEBRONES
-      <span class="services-w">SERVICES</span>
-    </h2>
-    <p class="brand-tagline">Servicios integrales corporativos</p>
+    <!-- Logo from official PDF -->
+    <img class="logo-big" src="assets/logo_hero_web.png" alt="LEBRONES SERVICES — Commercial Cleaning" />
 
     <hr class="gold-line" />
 
@@ -1967,14 +1945,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="mark-row">
-          <svg class="mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <g stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" fill="none">
-              <path d="M55 100 L55 35 L85 42 L85 100 Z"/>
-              <path d="M30 100 L30 62 L55 54 L55 100 Z"/>
-            </g>
-            <path d="M28 18 L30 26.5 L38.5 28.5 L30 30.5 L28 39 L26 30.5 L17.5 28.5 L26 26.5 Z" fill="#FFFFFF"/>
-            <path d="M42 38 L43 42 L47 43 L43 44 L42 48 L41 44 L37 43 L41 42 Z" fill="#FFFFFF"/>
-          </svg>
+          <img class="mark" src="assets/logo_nav.png" alt="LEBRONES SERVICES" />
           <div class="wm">LEBRONES SERVICES</div>
         </div>
         <p class="motto">“La tranquilidad de su operación, en manos expertas.”</p>
