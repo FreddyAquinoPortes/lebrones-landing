@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "html-to-image": {
+      "source": "html2png/skills",
+      "sourceType": "github",
+      "skillPath": "html-to-image/SKILL.md",
+      "computedHash": "87f5a44c60c96e3f7a3246d57b8087ee9dddb53c72034ce7e8e6e8d6f993b35f"
+    },
+    "nodejs-backend-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/javascript-typescript/skills/nodejs-backend-patterns/SKILL.md",
+      "computedHash": "3d6cbc12f720d8f02e1936c3e7fab78245eaa69500edbceea93d493d4ece6094"
+    },
+    "nodejs-best-practices": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/nodejs-best-practices/SKILL.md",
+      "computedHash": "6500f0617cb3bf5e5e565b42f5606365792591d3bdb1b2bd9cad3ef63a08ea39"
+    },
+    "pdf-extraction": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "pdf-extraction/SKILL.md",
+      "computedHash": "44ec33ec9d178e3c04c3dd210a98cb6ad0c3a45f9383019071bc9556cfc323e6"
+    },
+    "ppt-creator": {
+      "source": "daymade/claude-code-skills",
+      "sourceType": "github",
+      "skillPath": "daymade-docs/ppt-creator/SKILL.md",
+      "computedHash": "75d242a5bae53fef6f87dacb62a5270ae4da184113644b1939696105ff3d523b"
+    },
+    "pptx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pptx/SKILL.md",
+      "computedHash": "2275e4d8dba1790d52f6619b3e2fed04edc948beef545a2ad18e4a1be644426d"
+    },
+    "tailwind-css-patterns": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-typescript/skills/tailwind-css-patterns/SKILL.md",
+      "computedHash": "2fa1b2d4e0bc020dcbaa1e65af6f7ba75715116686e0fd663a4b268c8ace22d4"
+    },
+    "tailwind-design-system": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/frontend-mobile-development/skills/tailwind-design-system/SKILL.md",
+      "computedHash": "f54f39ce967af3a4bba1f662c3600f0253467508d5fbbc7c545c67e102da2253"
+    },
+    "tailwind-theme-builder": {
+      "source": "jezweb/claude-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/frontend/skills/tailwind-theme-builder/SKILL.md",
+      "computedHash": "59d8559d009ba701b3c8842b8fc6a47481682ed613d90345a380c4aca9671375"
+    },
+    "website-screenshot": {
+      "source": "html2png/skills",
+      "sourceType": "github",
+      "skillPath": "website-screenshot/SKILL.md",
+      "computedHash": "f97e25dadc80d6be4e2d425da5281352b9b3ad9e0c51c6a0e7f59a160e42535f"
+    }
+  }
+}

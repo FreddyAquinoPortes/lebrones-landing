@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing-page",
+      "runtimeExecutable": "C:\\Users\\Chronos3770\\AppData\\Local\\nodejs\\node-v22.14.0-win-x64\\npx.cmd",
+      "runtimeArgs": ["serve", ".", "-l", "3457", "--no-clipboard"],
+      "port": 3457
+    }
+  ]
+}

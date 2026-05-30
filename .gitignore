@@ -1,0 +1,20 @@
+.vercel
+node_modules/
+.obsidian/
+.agents/
+output_ppt/
+slide_images/
+*.base
+Imagenes generadas con gemini/
+00 - DASHBOARD/
+01 - EMPRESA/
+02 - SERVICIOS/
+03 - METODOLOGIA/
+04 - CLIENTES/
+05 - PROYECTOS/
+06 - RRHH/
+07 - SST/
+08 - FINANZAS/
+10 - REUNIONES/
+11 - RECURSOS/
+_Templates/
