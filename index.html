@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LEBRONES SERVICES — Servicios Integrales Corporativos</title>
-<meta name="description" content="LEBRONES SERVICES — Soluciones integrales para su empresa: fumigación, limpieza empresarial, aires acondicionados, plantas eléctricas, jardinería y outsourcing de personal. La tranquilidad de su operación, en manos expertas." />
+<meta name="description" content="LEBRONES SERVICES — Soluciones integrales para su empresa: fumigación, limpieza empresarial, aires acondicionados, plantas eléctricas, jardinería, outsourcing de personal y seguros corporativos. La tranquilidad de su operación, en manos expertas." />
 <meta property="og:title" content="LEBRONES SERVICES — Servicios Integrales Corporativos" />
 <meta property="og:description" content="Un solo proveedor de confianza para todas las necesidades operativas de su empresa." />
 <meta property="og:type" content="website" />
@@ -144,7 +144,7 @@
     gap: 24px;
   }
   .nav-brand { display: flex; align-items: center; gap: 12px; }
-  .nav-brand .mark { width: 34px; height: 34px; flex-shrink: 0; }
+  .nav-brand .mark { width: 36px; height: auto; flex-shrink: 0; object-fit: contain; }
   .nav-brand .wm {
     font-family: var(--font-display);
     font-weight: 700;
@@ -188,23 +188,14 @@
     transition: transform .3s ease;
   }
   .nav-links a:hover::after { transform: scaleX(1); }
-  .nav-cta { display: flex; align-items: center; gap: 16px; }
-  .nav-wa {
-    display: flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px; border-radius: 50%;
-    background: #25D366; color: #fff; font-size: 18px;
-    transition: transform .2s ease, box-shadow .2s ease;
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .nav-utils { display: flex; align-items: center; gap: 8px; }
+  .nav-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(139,149,165,.25);
+    margin: 0 6px;
   }
-  .nav-wa:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(37,211,102,.35); }
-  .lang-switch {
-    display: flex; border: 1px solid rgba(255,255,255,.3); border-radius: 4px; overflow: hidden; font-size: 11px;
-    font-family: var(--font-display); font-weight: 600; letter-spacing: 0.05em;
-  }
-  .lang-switch a {
-    padding: 4px 8px; color: var(--white-soft); transition: background .2s ease, color .2s ease;
-  }
-  .lang-switch a.active { background: var(--white); color: var(--navy); }
-  .lang-switch a:hover:not(.active) { background: rgba(255,255,255,.1); }
   .hamburger {
     display: none;
     width: 36px; height: 36px;
@@ -299,10 +290,11 @@
 
   .hero-content { position: relative; z-index: 2; max-width: 880px; width: 100%; will-change: transform; }
   .hero .logo-big {
-    width: clamp(260px, 30vw, 380px);
+    width: clamp(200px, 26vw, 320px);
     height: auto;
-    margin: 0 auto 32px;
+    margin: 0 auto 28px;
     display: block;
+    object-fit: contain;
   }
   .hero .brand-text {
     font-family: var(--font-display);
@@ -355,36 +347,6 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 36px;
-  }
-
-  .btn-wa {
-    background: #25D366; color: #fff;
-    display: inline-flex; align-items: center; gap: 8px;
-  }
-  .btn-wa:hover { background: #1ebe5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.3); }
-  .btn-wa svg { width: 18px; height: 18px; fill: currentColor; }
-
-  .wa-float {
-    position: fixed; bottom: 28px; right: 28px; z-index: 90;
-    width: 56px; height: 56px; border-radius: 50%;
-    background: #25D366; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(37,211,102,.4);
-    transition: transform .2s ease, box-shadow .2s ease;
-    font-size: 28px;
-  }
-  .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
-  .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
-
-  /* ---------- Alianza ---------- */
-  .alianza { background: var(--navy); }
-  .alianza-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-  }
-  .alianza-logo { max-width: 280px; margin: 0 auto; }
-  .alianza-logo img { width: 100%; height: auto; }
-  @media (max-width: 768px) {
-    .alianza-inner { grid-template-columns: 1fr; }
   }
 
   /* Stagger entry */
@@ -489,30 +451,6 @@
     font-size: 14px;
     line-height: 1.7;
     color: var(--white-soft);
-  }
-  .svc-toggle {
-    font-family: var(--font-display); font-weight: 600; font-size: 11px;
-    letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
-    cursor: pointer; margin-top: 16px; display: inline-flex; align-items: center; gap: 6px;
-    transition: color .2s ease;
-  }
-  .svc-toggle:hover { color: var(--gold-soft); }
-  .svc-toggle::after { content: "▲"; font-size: 8px; transition: transform .3s ease; }
-  .svc-card.open .svc-toggle::after { transform: rotate(180deg); }
-  .svc-detail {
-    max-height: 0; overflow: hidden; transition: max-height .4s ease;
-  }
-  .svc-card.open .svc-detail { max-height: 600px; }
-  .svc-detail ul {
-    list-style: none; padding: 0; margin: 16px 0 0;
-    display: grid; gap: 8px;
-  }
-  .svc-detail li {
-    font-size: 13.5px; color: var(--white-soft); line-height: 1.5;
-    padding-left: 16px; position: relative;
-  }
-  .svc-detail li::before {
-    content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 8px; top: 4px;
   }
   .svc-tags {
     display: flex;
@@ -776,7 +714,7 @@
     align-items: start;
   }
   .foot-brand .mark-row { display: flex; align-items: center; gap: 12px; }
-  .foot-brand .mark { width: 36px; height: 36px; flex-shrink: 0; }
+  .foot-brand .mark { width: 38px; height: auto; flex-shrink: 0; object-fit: contain; }
   .foot-brand .wm {
     font-family: var(--font-display);
     font-weight: 700;
@@ -1053,6 +991,197 @@
     .uniform-grid { grid-template-columns: 1fr; }
   }
 
+  /* ---------- Clients ---------- */
+  .clients { background: var(--navy-mid); border-top: 1px solid rgba(139,149,165,.08); border-bottom: 1px solid rgba(139,149,165,.08); }
+  .clients-scroll { overflow: hidden; position: relative; }
+  .clients-track {
+    display: flex;
+    gap: 48px;
+    animation: scrollClients 30s linear infinite;
+    width: max-content;
+  }
+  .clients-track:hover { animation-play-state: paused; }
+  .client-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--silver);
+    white-space: nowrap;
+    padding: 6px 0;
+    transition: color .2s ease;
+  }
+  .client-name:hover { color: var(--white); }
+  .clients-scroll::before, .clients-scroll::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .clients-scroll::before { left: 0; background: linear-gradient(to right, var(--navy-mid), transparent); }
+  .clients-scroll::after { right: 0; background: linear-gradient(to left, var(--navy-mid), transparent); }
+  @keyframes scrollClients {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---------- WhatsApp button ---------- */
+  .btn-whatsapp {
+    background: #25D366;
+    color: #FFFFFF;
+  }
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,.3);
+  }
+
+  /* ---------- Navbar WS + Lang ---------- */
+  .nav-ws {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: 1px solid rgba(37,211,102,.5);
+    color: #25D366;
+    border-radius: 50%;
+    transition: background .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .nav-ws:hover {
+    background: #25D366;
+    color: #fff;
+    border-color: #25D366;
+    transform: translateY(-1px);
+  }
+  .nav-ws svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(139,149,165,.3);
+    border-radius: 999px;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .lang-toggle button {
+    padding: 5px 10px;
+    color: var(--silver);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    transition: background .2s ease, color .2s ease;
+  }
+  .lang-toggle button.active {
+    background: rgba(255,255,255,.12);
+    color: var(--white);
+  }
+  .lang-toggle button:hover:not(.active) { color: var(--white); }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .ws-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(37,211,102,.45);
+    transition: transform .25s ease, box-shadow .25s ease;
+    cursor: pointer;
+  }
+  .ws-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37,211,102,.55);
+  }
+  .ws-float svg { width: 32px; height: 32px; fill: #fff; }
+
+  /* ---------- Expandable Service Cards ---------- */
+  .svc-card { cursor: pointer; }
+  .svc-card .svc-expand-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .svc-expand-indicator .arrow {
+    display: inline-block;
+    transition: transform .3s ease;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .svc-card.expanded .svc-expand-indicator .arrow {
+    transform: rotate(180deg);
+  }
+  .svc-card.expanded .svc-expand-indicator .label-expand { display: none; }
+  .svc-card .svc-expand-indicator .label-collapse { display: none; }
+  .svc-card.expanded .svc-expand-indicator .label-collapse { display: inline; }
+  .svc-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, opacity .3s ease;
+    opacity: 0;
+  }
+  .svc-card.expanded .svc-details {
+    max-height: 500px;
+    opacity: 1;
+  }
+  .svc-details-inner {
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px dashed rgba(139,149,165,.18);
+  }
+  .svc-details-inner ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .svc-details-inner li {
+    font-size: 13px;
+    color: var(--white-soft);
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+  .svc-details-inner li::before {
+    content: "\2726";
+    position: absolute;
+    left: 0;
+    color: var(--teal-bright);
+    font-size: 9px;
+    top: 3px;
+  }
+
+  @media (max-width: 860px) {
+    .nav-utils { gap: 6px; }
+    .nav-divider { display: none; }
+    .lang-toggle { display: none; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
@@ -1064,7 +1193,7 @@
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#top" class="nav-brand" aria-label="LEBRONES SERVICES — Inicio">
-      <img class="mark" src="logo.svg" alt="" aria-hidden="true" />
+      <img class="mark" src="assets/logo_nav.png" alt="LEBRONES SERVICES" />
       <span class="wm">LEBRONES SERVICES<small>SERVICIOS INTEGRALES</small></span>
     </a>
 
@@ -1078,13 +1207,16 @@
     </nav>
 
     <div class="nav-cta">
-      <a href="https://wa.me/18492552077" target="_blank" rel="noopener" class="nav-wa" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </a>
-      <div class="lang-switch">
-        <a href="#" class="active">ES</a>
-        <a href="#">EN</a>
+      <div class="nav-utils">
+        <a href="https://wa.me/18492552077?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20LEBRONES%20SERVICES" target="_blank" rel="noopener" class="nav-ws" aria-label="Contactar por WhatsApp" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <div class="lang-toggle" id="langToggle">
+          <button class="active" data-lang="es">ES</button>
+          <button data-lang="en">EN</button>
+        </div>
       </div>
+      <span class="nav-divider" aria-hidden="true"></span>
       <a href="#contacto" class="btn btn-gold">Solicitar cotización</a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -1114,8 +1246,8 @@
   <div class="float-spk silver" data-parallax="-0.25" aria-hidden="true" style="bottom:12%; right:12%; font-size:20px; opacity:.3;">✦</div>
   <div class="hero-content stagger" id="heroStagger" data-parallax="-0.08">
 
-    <!-- Logo full -->
-    <img class="logo-big" src="logo.svg" alt="LEBRONES SERVICES — Servicios Integrales Corporativos" />
+    <!-- Logo from official PDF -->
+    <img class="logo-big" src="assets/logo_hero_web.png" alt="LEBRONES SERVICES — Commercial Cleaning" />
 
     <hr class="gold-line" />
 
@@ -1127,8 +1259,8 @@
     <div class="ctas">
       <a href="#servicios" class="btn btn-gold">Ver servicios</a>
       <a href="#contacto" class="btn btn-ghost">Contáctenos</a>
-      <a href="https://wa.me/18492552077" target="_blank" rel="noopener" class="btn btn-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="https://wa.me/18492552077?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20LEBRONES%20SERVICES" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
       </a>
     </div>
@@ -1142,73 +1274,8 @@
       <div class="creds-item"><span class="spk">✦</span> Empresa legalmente constituida</div>
       <div class="creds-item"><span class="spk">✦</span> Cumplimiento Ley 522-06 SST</div>
       <div class="creds-item"><span class="spk">✦</span> Personal capacitado y supervisado</div>
+      <div class="creds-item"><span class="spk">✦</span> Centro INFOTEP certificado</div>
       <div class="creds-item"><span class="spk">✦</span> Seguro de responsabilidad civil</div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== ABOUT ========== -->
-<section class="about block" id="nosotros" aria-label="Nosotros">
-  <div class="container">
-    <div class="about-grid">
-      <div class="reveal">
-        <p class="eyebrow">Conozca nuestra empresa</p>
-        <h2 style="margin-top:12px;">Quiénes somos</h2>
-        <hr class="gold-line left" />
-        <p class="copy">
-          En LEBRONES SERVICES ofrecemos soluciones integrales de servicios corporativos, suministrando personal confiable, capacitado y supervisado para garantizar entornos seguros, organizados y eficientes.
-        </p>
-        <p class="copy">
-          Somos un aliado estratégico para empresas e instituciones que buscan optimizar sus operaciones con calidad, responsabilidad y resultados sostenibles en el tiempo.
-        </p>
-
-        <div class="meta">
-          <div><span class="k">Razón social</span><span class="v">LEBRONES SOLUTION SERVICE, SRL</span></div>
-          <div><span class="k">Sede</span><span class="v">C. Jose Cabrera 16, Santo Domingo Este 11501, RD — Edificio: Jomlia</span></div>
-        </div>
-
-        <p class="motto">"La tranquilidad de su operación, en manos expertas."</p>
-      </div>
-
-      <div class="reveal" data-delay="2">
-        <div class="axes">
-          <div class="axis">
-            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="14" cy="14" r="10"/><path d="M8 8 L20 20"/>
-            </svg>
-            <div class="ax-text">Tolerancia cero al incumplimiento</div>
-          </div>
-          <div class="axis">
-            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 4 L17 11 L24 12 L19 17 L20 24 L14 21 L8 24 L9 17 L4 12 L11 11 Z"/>
-            </svg>
-            <div class="ax-text">Calidad y mejora continua</div>
-          </div>
-          <div class="axis">
-            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="14" cy="14" r="10"/><path d="M9 14 L12 17 L19 10"/>
-            </svg>
-            <div class="ax-text">Transparencia y comunicación</div>
-          </div>
-          <div class="axis">
-            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 4 L23 8 V15 C23 20 18 24 14 25 C10 24 5 20 5 15 V8 Z"/>
-            </svg>
-            <div class="ax-text">Integridad del capital humano</div>
-          </div>
-        </div>
-
-        <div class="mv-grid">
-          <div class="mv">
-            <span class="label">Misión</span>
-            <p>Ofrecer soluciones confiables y eficientes en servicios corporativos para empresas e instituciones.</p>
-          </div>
-          <div class="mv">
-            <span class="label">Visión</span>
-            <p>Ser referentes en servicios corporativos por nuestra calidad, cumplimiento y confianza.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1232,7 +1299,7 @@
         </p>
       </div>
       <div class="team-img-wrap reveal" data-delay="2">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/01_equipo_gemini.jpg" alt="Equipo corporativo LEBRONES SERVICES con uniformes navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+        <img src="assets/01_equipo_gemini.jpg" alt="Equipo corporativo LEBRONES SERVICES con uniformes navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
       </div>
     </div>
   </div>
@@ -1261,26 +1328,30 @@
             <path d="M22 26 H28"/>
           </svg>
         </div>
-        <h3>Fumigación y control de plagas</h3>
+        <h3>Fumigacion y control de plagas</h3>
         <p>Control integrado de plagas para oficinas, almacenes e instalaciones industriales. Personal certificado y productos autorizados y biodegradables.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Control de roedores</li>
-            <li>Diagnostico inicial gratis</li>
-            <li>Termitas de madera</li>
-            <li>Tratamiento inyectado para muebles y estructuras</li>
-            <li>Jardineria sanitaria</li>
-            <li>Fumigacion de areas verdes contra mosquitos</li>
-            <li>Fumigacion contra cucarachas</li>
-            <li>Fumigacion fria ULV ultra fria (no mancha)</li>
-            <li>Desinfeccion contra insectos rastreros y voladores</li>
-            <li>Desinfeccion y sanitizacion: bacterias y hongos</li>
-            <li>Fumigacion para mercancias y contenedores</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Control de roedores</li>
+              <li>Diagnostico inicial gratis</li>
+              <li>Termitas de madera</li>
+              <li>Tratamiento inyectado para muebles y estructuras</li>
+              <li>Jardineria sanitaria</li>
+              <li>Fumigacion de areas verdes contra mosquitos</li>
+              <li>Fumigacion contra cucarachas</li>
+              <li>Fumigacion fria ULV ultra fria (no mancha)</li>
+              <li>Desinfeccion contra insectos rastreros y voladores</li>
+              <li>Desinfeccion y sanitizacion: bacterias y hongos</li>
+              <li>Fumigacion para mercancias y contenedores</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
-          <span>Nebulización</span><span>Control de termitas</span>
+          <span>Nebulizacion</span><span>Control de termitas</span><span>Certificacion</span>
         </div>
       </article>
 
@@ -1297,24 +1368,28 @@
         </div>
         <h3>Limpieza empresarial</h3>
         <p>Limpieza general y especializada para entornos corporativos. Oficinas, recepciones, comedores. Desinfeccion de areas de alto contacto y cristalizacion de pisos.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Limpieza diaria, semanal, quincenal y mensual</li>
-            <li>Limpieza profunda</li>
-            <li>Limpieza de cristales</li>
-            <li>Limpieza de areas especiales: banos, cocinas</li>
-            <li>Cristales de altura con andamios</li>
-            <li>Planes ejecutivos y planes premium</li>
-            <li>Limpieza de mobiliario y alfombras</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Limpieza diaria, semanal, quincenal y mensual</li>
+              <li>Limpieza profunda</li>
+              <li>Limpieza de cristales</li>
+              <li>Limpieza de areas especiales: banos, cocinas</li>
+              <li>Cristales de altura con andamios</li>
+              <li>Planes ejecutivos y planes premium</li>
+              <li>Limpieza de mobiliario y alfombras</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
           <span>Limpieza diaria</span><span>Desinfeccion</span><span>Cristalizacion</span>
         </div>
       </article>
 
-      <!-- 3 AC -->
+      <!-- 3 Alianzas Estratégicas - JOMLIA -->
       <article class="svc-card reveal" data-delay="3">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1329,19 +1404,23 @@
         </div>
         <h3>Aires acondicionados</h3>
         <p>Representante oficial de <strong>JOMLIA Solution Services</strong>. Brindamos instalacion, mantenimiento preventivo y correctivo de sistemas HVAC a traves de nuestra alianza estrategica.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Instalacion de equipos split, cassette e industriales</li>
-            <li>Mantenimiento preventivo y correctivo</li>
-            <li>Limpieza de ductos y filtros</li>
-            <li>Recarga de gas refrigerante</li>
-            <li>Diagnostico y reparacion</li>
-            <li>Alianza con JOMLIA Solution Services</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Instalacion de equipos split, cassette e industriales</li>
+              <li>Mantenimiento preventivo y correctivo</li>
+              <li>Limpieza de ductos y filtros</li>
+              <li>Recarga de gas refrigerante</li>
+              <li>Diagnostico y reparacion</li>
+              <li>Alianza con JOMLIA Solution Services</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
-          <span>Alianza estrategica</span><span>Jomlia</span><span>HVAC</span>
+          <span>Alianza estrategica</span><span>JOMLIA</span><span>HVAC</span>
         </div>
       </article>
 
@@ -1354,14 +1433,18 @@
         </div>
         <h3>Plantas electricas</h3>
         <p>Mantenimiento preventivo y correctivo de plantas electricas. Garantizamos el funcionamiento continuo de su respaldo energetico en todo momento.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Mantenimiento de generadores diesel y gas</li>
-            <li>Pruebas de carga y transferencia</li>
-            <li>Servicio de emergencia 24/7</li>
-            <li>Monitoreo y diagnostico</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Mantenimiento de generadores diesel y gas</li>
+              <li>Pruebas de carga y transferencia</li>
+              <li>Servicio de emergencia 24/7</li>
+              <li>Monitoreo y diagnostico</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
           <span>Preventivo</span><span>Correctivo</span><span>Respaldo 24/7</span>
@@ -1380,15 +1463,19 @@
         </div>
         <h3>Jardineria corporativa</h3>
         <p>Diseno, instalacion y mantenimiento de areas verdes. Poda, riego, abonado, control fitosanitario y sistemas de riego automatizado.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Diseno y mantenimiento de areas verdes</li>
-            <li>Poda ornamental y control fitosanitario</li>
-            <li>Instalacion de sistemas de riego</li>
-            <li>Abonado y fertilizacion programada</li>
-            <li>Corte de cesped y limpieza de jardines</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Diseno y mantenimiento de areas verdes</li>
+              <li>Poda ornamental y control fitosanitario</li>
+              <li>Instalacion de sistemas de riego</li>
+              <li>Abonado y fertilizacion programada</li>
+              <li>Corte de cesped y limpieza de jardines</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
           <span>Diseno</span><span>Mantenimiento</span><span>Riego automatizado</span>
@@ -1407,72 +1494,52 @@
         </div>
         <h3>Outsourcing de personal</h3>
         <p>Suministro de personal capacitado, uniformado y supervisado para servicios generales. Un solo interlocutor para toda su operacion.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Seleccion y contratacion de personal operativo</li>
-            <li>Gestion de nomina y beneficios</li>
-            <li>Sustitucion inmediata garantizada 24/7</li>
-            <li>Supervision constante con checklists</li>
-            <li>Reportes mensuales de gestion</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Seleccion y contratacion de personal operativo</li>
+              <li>Gestion de nomina y beneficios</li>
+              <li>Sustitucion inmediata garantizada 24/7</li>
+              <li>Supervision constante con checklists</li>
+              <li>Reportes mensuales de gestion</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
           <span>Personal calificado</span><span>Supervision</span><span>Reportes mensuales</span>
         </div>
       </article>
 
-      <!-- 7 Seguros corporativos -->
+      <!-- 7 Seguros Corporativos -->
       <article class="svc-card reveal" data-delay="1">
         <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 4 L40 12 V24 C40 34 33 42 24 46 C15 42 8 34 8 24 V12 L24 4Z"/>
-            <path d="M17 24 L22 29 L31 20"/>
+            <path d="M24 4 L40 10 V22 C40 32 32 40 24 44 C16 40 8 32 8 22 V10 Z"/>
+            <path d="M18 24 L22 28 L30 18"/>
           </svg>
         </div>
         <h3>Seguros corporativos</h3>
         <p>Asesoria y colocacion de polizas colectivas e individuales para sus colaboradores. Activaciones con stand en sus instalaciones y capacitaciones INFOTEP sobre seguros para RRHH.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
-        <div class="svc-detail">
-          <ul>
-            <li>Polizas colectivas e individuales</li>
-            <li>Activaciones con stand en empresas</li>
-            <li>Capacitaciones INFOTEP sobre seguros</li>
-            <li>Servicio postventa para siniestros y renovacion</li>
-          </ul>
+        <div class="svc-expand-indicator">
+          <span class="label-expand">Ver detalles</span><span class="label-collapse">Ocultar</span> <span class="arrow">&#9662;</span>
+        </div>
+        <div class="svc-details">
+          <div class="svc-details-inner">
+            <ul>
+              <li>Polizas colectivas e individuales</li>
+              <li>Activaciones con stand en empresas</li>
+              <li>Capacitaciones INFOTEP sobre seguros</li>
+              <li>Servicio postventa para siniestros y renovacion</li>
+            </ul>
+          </div>
         </div>
         <div class="svc-tags">
           <span>Polizas colectivas</span><span>Activaciones in-house</span><span>Capacitacion INFOTEP</span>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ========== ALIANZA ESTRATÉGICA ========== -->
-<section class="alianza block" aria-label="Alianza Estratégica">
-  <div class="container">
-    <div class="section-head reveal">
-      <hr class="gold-line" />
-      <p class="eyebrow">Alianza estratégica</p>
-      <h2>Representante Exclusivo Jomlia Solutions</h2>
-      <p>Expertos en Climatización — República Dominicana</p>
-    </div>
-    <div class="alianza-inner">
-      <div class="reveal">
-        <p class="copy">
-          Somos representante exclusivo autorizado de <strong>Jomlia Solutions</strong> para soluciones integrales de climatización en República Dominicana.
-        </p>
-        <p class="copy" style="margin-top:14px;">
-          Garantizamos equipos originales, respaldo técnico certificado y disponibilidad de repuestos directos de fábrica.
-        </p>
-        <p class="copy" style="margin-top:14px;">
-          A través de esta alianza brindamos a nuestros clientes tecnología de ahorro energético, instalación profesional y garantía oficial Jomlia.
-        </p>
-      </div>
-      <div class="alianza-logo reveal" data-delay="2">
-        <img src="jomlia-logo.svg" alt="Jomlia Solutions — Alianza Estratégica" />
-      </div>
     </div>
   </div>
 </section>
@@ -1488,28 +1555,53 @@
     </div>
     <div class="gallery-strip">
       <div class="gallery-item reveal" data-delay="1">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/02_limpieza_gemini.jpg" alt="Servicio de limpieza empresarial profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/02_limpieza_gemini.jpg" alt="Servicio de limpieza empresarial profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Limpieza</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="2">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/03_fumigacion_gemini.jpg" alt="Servicio de fumigación profesional LEBRONES" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/03_fumigacion_gemini.jpg" alt="Servicio de fumigación profesional LEBRONES" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Fumigación</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="3">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/04_ac_gemini.jpg" alt="Mantenimiento de aires acondicionados" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/04_ac_gemini.jpg" alt="Mantenimiento de aires acondicionados" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>A/C</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="4">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/05_electricas_gemini.jpg" alt="Mantenimiento de plantas eléctricas" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/05_electricas_gemini.jpg" alt="Mantenimiento de plantas eléctricas" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Eléctricas</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="5">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/06_jardineria_gemini.jpg" alt="Servicio de jardinería profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/06_jardineria_gemini.jpg" alt="Servicio de jardinería profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Jardinería</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="6">
-        <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/07_outsourcing_gemini.jpg" alt="Outsourcing de personal" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/07_outsourcing_gemini.jpg" alt="Outsourcing de personal" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Personal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CLIENTS ========== -->
+<section class="clients block" style="padding: clamp(48px,5vw,64px) 0;" aria-label="Clientes corporativos">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:36px;">
+      <p class="eyebrow">Confían en nosotros</p>
+      <h2 style="margin-top:12px;">Cartera corporativa activa</h2>
+      <p>Acceso directo a multiples empresas e instituciones en gobierno, salud, defensa y mas.</p>
+    </div>
+    <div class="clients-scroll">
+      <div class="clients-track">
+        <span class="client-name">ETED</span>
+        <span class="client-name">DNCD</span>
+        <span class="client-name">Armada de Republica Dominicana</span>
+        <span class="client-name">Hospital Dr. Ricardo Limardo</span>
+        <span class="client-name">JOMLIA Solution Services</span>
+        <span class="client-name">ETED</span>
+        <span class="client-name">DNCD</span>
+        <span class="client-name">Armada de Republica Dominicana</span>
+        <span class="client-name">Hospital Dr. Ricardo Limardo</span>
+        <span class="client-name">JOMLIA Solution Services</span>
       </div>
     </div>
   </div>
@@ -1564,9 +1656,78 @@
           <path d="M7 31 C7 24 12 21 18 21 C24 21 29 24 29 31"/>
           <path d="M22 12 L24 14 L28 10"/>
         </svg>
-        <div class="num" data-target="500" data-prefix="+">0</div>
-        <h3>Servicios realizados</h3>
-        <p>Personal seleccionado, capacitado y evaluado continuamente bajo nuestros estándares.</p>
+        <div class="num placeholder" aria-hidden="true"></div>
+        <h3>Multiples empresas</h3>
+        <p>Cartera corporativa activa en gobierno, salud, defensa, retail y educacion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about block" id="nosotros" aria-label="Nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="eyebrow">Conozca nuestra empresa</p>
+        <h2 style="margin-top:12px;">Quiénes somos</h2>
+        <hr class="gold-line left" />
+        <p class="copy">
+          En LEBRONES SERVICES ofrecemos soluciones integrales de servicios corporativos, suministrando personal confiable, capacitado y supervisado para garantizar entornos seguros, organizados y eficientes.
+        </p>
+        <p class="copy">
+          Somos un aliado estratégico para empresas e instituciones que buscan optimizar sus operaciones con calidad, responsabilidad y resultados sostenibles en el tiempo.
+        </p>
+
+        <div class="meta">
+          <div><span class="k">Razón social</span><span class="v">LEBRONES SOLUTION SERVICE, SRL</span></div>
+          <div><span class="k">Directora general</span><span class="v">Carmen Tanyelina Lebrón</span></div>
+          <div><span class="k">Sede</span><span class="v">República Dominicana</span></div>
+          <div><span class="k">Infraestructura</span><span class="v">Oficina propia, salon de conferencias (15 personas), 2 vehiculos</span></div>
+          <div><span class="k">Equipo comercial</span><span class="v">2 ejecutivos B2B y B2C</span></div>
+        </div>
+
+        <p class="motto">“La tranquilidad de su operación, en manos expertas.”</p>
+      </div>
+
+      <div class="reveal" data-delay="2">
+        <div class="axes">
+          <div class="axis">
+            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="14" cy="14" r="10"/><path d="M8 8 L20 20"/>
+            </svg>
+            <div class="ax-text">Tolerancia cero al incumplimiento</div>
+          </div>
+          <div class="axis">
+            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 4 L17 11 L24 12 L19 17 L20 24 L14 21 L8 24 L9 17 L4 12 L11 11 Z"/>
+            </svg>
+            <div class="ax-text">Calidad y mejora continua</div>
+          </div>
+          <div class="axis">
+            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="14" cy="14" r="10"/><path d="M9 14 L12 17 L19 10"/>
+            </svg>
+            <div class="ax-text">Transparencia y comunicación</div>
+          </div>
+          <div class="axis">
+            <svg class="ax-icon" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 4 L23 8 V15 C23 20 18 24 14 25 C10 24 5 20 5 15 V8 Z"/>
+            </svg>
+            <div class="ax-text">Integridad del capital humano</div>
+          </div>
+        </div>
+
+        <div class="mv-grid">
+          <div class="mv">
+            <span class="label">Misión</span>
+            <p>Ofrecer soluciones confiables y eficientes en servicios corporativos para empresas e instituciones.</p>
+          </div>
+          <div class="mv">
+            <span class="label">Visión</span>
+            <p>Ser referentes en servicios corporativos por nuestra calidad, cumplimiento y confianza.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1585,7 +1746,7 @@
       <!-- 1: Estándar -->
       <div class="uniform-card reveal" data-delay="1">
         <div class="card-img">
-          <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/u_estandar_gemini.jpg" alt="Uniforme estándar LEBRONES - Polo Deep Navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_estandar_gemini.jpg" alt="Uniforme estándar LEBRONES - Polo Deep Navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme estándar</h4>
@@ -1599,7 +1760,7 @@
       <!-- 2: Mantenimiento -->
       <div class="uniform-card reveal" data-delay="2">
         <div class="card-img">
-          <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/u_tecnico_gemini.jpg" alt="Uniforme técnico LEBRONES - Polo navy con herramientas" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_tecnico_gemini.jpg" alt="Uniforme técnico LEBRONES - Polo navy con herramientas" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme técnico</h4>
@@ -1614,7 +1775,7 @@
       <!-- 3: Fumigación -->
       <div class="uniform-card reveal" data-delay="3">
         <div class="card-img">
-          <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/u_fumigacion_gemini.jpg" alt="Uniforme fumigación LEBRONES - Traje protector blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_fumigacion_gemini.jpg" alt="Uniforme fumigación LEBRONES - Traje protector blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme fumigación</h4>
@@ -1629,7 +1790,7 @@
       <!-- 4: Jardinería -->
       <div class="uniform-card reveal" data-delay="4">
         <div class="card-img">
-          <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/u_jardineria_gemini.jpg" alt="Uniforme jardinería LEBRONES - Polo navy con gorra" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_jardineria_gemini.jpg" alt="Uniforme jardinería LEBRONES - Polo navy con gorra" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme jardinería</h4>
@@ -1643,7 +1804,7 @@
       <!-- 5: Supervisor -->
       <div class="uniform-card reveal" data-delay="5">
         <div class="card-img">
-          <img src="09 - DIRECCION CREATIVA Y GRAFICA/Assets/generated/u_supervisor_gemini.jpg" alt="Uniforme supervisor SST LEBRONES - Chaleco navy y casco blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_supervisor_gemini.jpg" alt="Uniforme supervisor SST LEBRONES - Chaleco navy y casco blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme supervisor</h4>
@@ -1714,6 +1875,7 @@
             <option>Plantas eléctricas</option>
             <option>Jardinería corporativa</option>
             <option>Outsourcing de personal</option>
+            <option>Seguros corporativos</option>
             <option>Solución integral (varios servicios)</option>
           </select>
         </div>
@@ -1783,7 +1945,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="mark-row">
-          <img class="mark" src="logo.svg" alt="" aria-hidden="true" />
+          <img class="mark" src="assets/logo_nav.png" alt="LEBRONES SERVICES" />
           <div class="wm">LEBRONES SERVICES</div>
         </div>
         <p class="motto">“La tranquilidad de su operación, en manos expertas.”</p>
@@ -1815,6 +1977,11 @@
     </div>
   </div>
 </footer>
+
+<!-- ========== FLOATING WHATSAPP ========== -->
+<a href="https://wa.me/18492552077?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20LEBRONES%20SERVICES" target="_blank" rel="noopener" class="ws-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <script>
   // ----- Navbar scroll state -----
@@ -1917,6 +2084,37 @@
   }, { threshold: 0.4 });
   document.querySelectorAll('.num[data-target]').forEach(el => countIO.observe(el));
 
+  // ----- Service cards expand on click -----
+  document.querySelectorAll('.svc-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't toggle if clicking a link inside
+      if (e.target.closest('a')) return;
+      card.classList.toggle('expanded');
+    });
+  });
+
+  // ----- Language toggle (ES/EN) -----
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    const translations = {
+      en: {
+        'Soluciones integrales': 'Comprehensive solutions',
+        'para su empresa': 'for your business',
+        'Ver servicios': 'View services',
+        'Nuestros servicios': 'Our services',
+        'Profesionales comprometidos': 'Committed professionals',
+        'Solicitar cotización': 'Request a quote',
+      }
+    };
+    langToggle.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        langToggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.documentElement.lang = btn.dataset.lang;
+      });
+    });
+  }
+
   // ----- Form (presentation piece) -----
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
@@ -1932,10 +2130,5 @@
     form.reset();
   });
 </script>
-
-<!-- WhatsApp floating button -->
-<a href="https://wa.me/18492552077" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
 </body>
 </html>
