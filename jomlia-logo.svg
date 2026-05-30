@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Jomlia Solution Services">
+  <defs>
+    <!-- Blue diamond gradient: light top-left, dark bottom-right -->
+    <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#3060CC"/>
+      <stop offset="45%"  stop-color="#1B3A8C"/>
+      <stop offset="100%" stop-color="#0D2460"/>
+    </linearGradient>
+    <!-- Diamond edge highlight (left & right sides) -->
+    <linearGradient id="diamondEdge" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%"   stop-color="#2050B8" stop-opacity="0.7"/>
+      <stop offset="40%"  stop-color="#1B3A8C" stop-opacity="0"/>
+      <stop offset="60%"  stop-color="#1B3A8C" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0A1E60" stop-opacity="0.7"/>
+    </linearGradient>
+    <!-- Black ring gradient -->
+    <radialGradient id="ringGrad" cx="45%" cy="40%" r="60%">
+      <stop offset="0%"   stop-color="#3a3a3a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+    <!-- White circle inner shadow (gray rim) -->
+    <radialGradient id="circleGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="82%"  stop-color="#ffffff"/>
+      <stop offset="92%"  stop-color="#e8e8e8"/>
+      <stop offset="100%" stop-color="#c8c8c8"/>
+    </radialGradient>
+    <!-- Gear gradient: dark red body -->
+    <radialGradient id="gearGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%"   stop-color="#cc2020"/>
+      <stop offset="60%"  stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#5a0000"/>
+    </radialGradient>
+    <!-- Clip to white circle -->
+    <clipPath id="wClip">
+      <circle cx="150" cy="150" r="94"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── White background ── -->
+  <rect width="300" height="300" fill="white"/>
+
+  <!-- ── Blue diamond (base fill) ── -->
+  <polygon points="150,8 292,150 150,292 8,150" fill="url(#diamondGrad)"/>
+  <!-- Diamond edge shading overlay -->
+  <polygon points="150,8 292,150 150,292 8,150" fill="url(#diamondEdge)"/>
+  <!-- Diamond top highlight strip -->
+  <polygon points="150,8 180,38 150,68 120,38" fill="white" opacity="0.08"/>
+
+  <!-- ── Outer black ring ── -->
+  <circle cx="150" cy="150" r="143" fill="none" stroke="url(#ringGrad)" stroke-width="20"/>
+
+  <!-- ── Inner white circle (gray rim + white fill) ── -->
+  <circle cx="150" cy="150" r="96" fill="#b0b0b0"/>
+  <circle cx="150" cy="150" r="93" fill="url(#circleGrad)"/>
+
+  <!-- ── Gear: 12 teeth, center (150,210), outer_r=52, inner_r=40, clipped ── -->
+  <!-- Gear body circle first (fills root between teeth) -->
+  <circle cx="150" cy="210" r="40" fill="url(#gearGrad)" clip-path="url(#wClip)"/>
+  <!-- Gear teeth path -->
+  <path clip-path="url(#wClip)" fill="url(#gearGrad)" d="
+    M 139.6,171.4
+    L 143.6,158.4 A 52 52 0 0 1 156.4,158.4 L 160.4,171.4
+    L 170.3,162.1 A 52 52 0 0 1 181.3,168.5 L 178.3,181.7
+    L 191.5,178.7 A 52 52 0 0 1 197.8,189.7 L 188.6,199.6
+    L 201.6,203.6 A 52 52 0 0 1 201.6,216.4 L 188.6,220.4
+    L 197.8,230.3 A 52 52 0 0 1 191.5,241.3 L 178.3,238.3
+    L 181.3,251.5 A 52 52 0 0 1 170.3,257.9 L 160.4,248.6
+    L 156.4,261.6 A 52 52 0 0 1 143.6,261.6 L 139.6,248.6
+    L 129.7,257.9 A 52 52 0 0 1 118.7,251.5 L 121.7,238.3
+    L 108.5,241.3 A 52 52 0 0 1 102.1,230.3 L 111.4,220.4
+    L 98.4,216.4  A 52 52 0 0 1 98.4,203.6  L 111.4,199.6
+    L 102.1,189.7 A 52 52 0 0 1 108.5,178.7 L 121.7,181.7
+    L 118.7,168.5 A 52 52 0 0 1 129.7,162.1 L 139.6,171.4 Z"/>
+  <!-- Gear highlight (top-left shimmer) -->
+  <circle cx="150" cy="210" r="40" fill="white" opacity="0.07" clip-path="url(#wClip)"/>
+  <!-- Gear hole -->
+  <circle cx="150" cy="210" r="16" fill="white" clip-path="url(#wClip)"/>
+
+  <!-- ── Text: JOMLIA ── -->
+  <text
+    x="150" y="121"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="46"
+    font-weight="bold"
+    letter-spacing="1"
+    fill="#8B0000">JOMLIA</text>
+
+  <!-- ── Text: SOLUTION SERVICES ── -->
+  <text
+    x="150" y="147"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="11.5"
+    font-weight="700"
+    letter-spacing="3.8"
+    fill="#8B0000">SOLUTION SERVICES</text>
+
+  <!-- ── Circle border cleanup ── -->
+  <circle cx="150" cy="150" r="93" fill="none" stroke="#d0d0d0" stroke-width="0.8"/>
+</svg>
