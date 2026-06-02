@@ -1175,8 +1175,15 @@
   .nav-links a.spy-active::after { transform: scaleX(1); }
 
   /* ---------- Alianza logo — card con fondo sutil ---------- */
+  .alianza-logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
   .alianza-logo {
     max-width: 320px;
+    width: 100%;
     margin: 0 auto;
     padding: 36px 40px;
     border: 1px solid rgba(200,149,60,.18);
@@ -1185,6 +1192,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: border-color .3s ease, background .3s ease, transform .3s ease;
+    text-decoration: none;
+  }
+  .alianza-logo:hover {
+    border-color: rgba(200,149,60,.45);
+    background: rgba(255,255,255,.055);
+    transform: translateY(-3px);
   }
   .alianza-logo img {
     width: 100%;
@@ -1193,7 +1208,37 @@
     filter: drop-shadow(0 4px 18px rgba(200,149,60,.18));
     transition: filter .3s ease;
   }
-  .alianza-logo:hover img { filter: drop-shadow(0 6px 28px rgba(200,149,60,.32)); }
+  .alianza-logo:hover img { filter: drop-shadow(0 6px 28px rgba(200,149,60,.38)); }
+
+  /* CTA "Visitar jomlia.com" debajo del logo */
+  .jomlia-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver);
+    text-decoration: none;
+    padding: 8px 4px;
+    transition: color .25s ease;
+  }
+  .jomlia-cta:hover { color: var(--gold); }
+  .jomlia-cta svg {
+    width: 17px; height: 17px;
+    stroke: currentColor; fill: none;
+    transition: transform .3s ease;
+  }
+  .jomlia-cta:hover svg { transform: translateX(4px); }
+  @media (prefers-reduced-motion: no-preference) {
+    .jomlia-cta .arr { animation: nudgeX 2s ease-in-out infinite; }
+  }
+  @keyframes nudgeX {
+    0%, 100% { transform: translateX(0); }
+    50%       { transform: translateX(4px); }
+  }
 
   /* ---------- Back-to-top ---------- */
   .back-top {
@@ -1655,8 +1700,17 @@
           A través de esta alianza brindamos a nuestros clientes tecnología de ahorro energético, instalación profesional y garantía oficial Jomlia.
         </p>
       </div>
-      <div class="alianza-logo reveal" data-delay="2">
-        <img src="assets/partners/jomlia-logo-nobg.png" alt="Jomlia Solutions — Alianza Estratégica" style="width:100%; height:auto; display:block;" />
+      <div class="alianza-logo-col reveal" data-delay="2">
+        <a href="https://jomlia.com/" target="_blank" rel="noopener noreferrer"
+           class="alianza-logo" aria-label="Visitar sitio oficial de Jomlia Solutions (abre en nueva pestaña)">
+          <img src="assets/partners/jomlia-logo-nobg.png" alt="Logo Jomlia Solution Services" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;" />
+        </a>
+        <a href="https://jomlia.com/" target="_blank" rel="noopener noreferrer" class="jomlia-cta">
+          <span>Visitar jomlia.com</span>
+          <svg viewBox="0 0 20 20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="arr">
+            <path d="M4 10h12M11 5l5 5-5 5"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
