@@ -8,6 +8,9 @@
 <meta property="og:title" content="LEBRONES SERVICES — Servicios Integrales Corporativos" />
 <meta property="og:description" content="Un solo proveedor de confianza para todas las necesidades operativas de su empresa." />
 <meta property="og:type" content="website" />
+<meta name="theme-color" content="#0F1B2D" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="LEBRONES SOLUTION SERVICE, SRL" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1129,9 +1132,104 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
+
+  /* ---------- Skip nav (WCAG 2.1 – 2.4.1) ---------- */
+  .skip-nav {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 300;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 10px 20px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: var(--radius);
+    transition: top .2s ease;
+    white-space: nowrap;
+  }
+  .skip-nav:focus { top: 16px; outline: 2px solid var(--navy); outline-offset: 2px; }
+
+  /* ---------- Focus visible ring (WCAG 2.1 – 1.4.11 / 2.4.7) ---------- */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus:not(:focus-visible),
+  button:focus:not(:focus-visible) { outline: none; }
+
+  /* ---------- Touch target mínimo 44×44px (WCAG 2.5.5) ---------- */
+  @media (pointer: coarse) {
+    .hamburger  { width: 44px; height: 44px; }
+    .nav-wa     { width: 44px; height: 44px; }
+    .wa-float   { width: 62px; height: 62px; }
+    .svc-toggle { padding: 8px 0; }
+  }
+
+  /* ---------- Nav scrollspy — link activo ---------- */
+  .nav-links a.spy-active { color: var(--gold); }
+  .nav-links a.spy-active::after { transform: scaleX(1); }
+
+  /* ---------- Alianza logo — card con fondo sutil ---------- */
+  .alianza-logo {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 36px 40px;
+    border: 1px solid rgba(200,149,60,.18);
+    border-radius: 10px;
+    background: rgba(255,255,255,.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .alianza-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 18px rgba(200,149,60,.18));
+    transition: filter .3s ease;
+  }
+  .alianza-logo:hover img { filter: drop-shadow(0 6px 28px rgba(200,149,60,.32)); }
+
+  /* ---------- Back-to-top ---------- */
+  .back-top {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 89;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 1px solid var(--navy-line);
+    color: var(--silver);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease, background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .back-top.show { opacity: 1; pointer-events: auto; }
+  .back-top:hover { background: var(--navy-line); color: var(--gold); transform: translateY(-3px); }
+  .back-top svg { width: 16px; height: 16px; stroke: currentColor; fill: none; }
+
+  /* ---------- Form — estado de envío legible ---------- */
+  #formStatus {
+    display: block;
+    margin-top: 10px;
+    min-height: 20px;
+    font-size: 13px;
+    transition: color .2s ease;
+  }
 </style>
+<noscript><style>.reveal,.stagger>*{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body data-screen-label="01 LEBRONES SERVICES — Landing">
+
+<a href="#nosotros" class="skip-nav">Saltar al contenido</a>
 
 <!-- ========== NAVBAR ========== -->
 <header class="nav" id="nav">
@@ -1235,7 +1333,7 @@
 </section>
 
 <!-- ========== ABOUT ========== -->
-<section class="about block" id="nosotros" aria-label="Nosotros">
+<section class="about block" id="nosotros" aria-label="Nosotros" tabindex="-1">
   <div class="container">
     <div class="about-grid">
       <div class="reveal">
@@ -1319,7 +1417,7 @@
         </p>
       </div>
       <div class="team-img-wrap reveal" data-delay="2">
-        <img src="assets/01_equipo_gemini.jpg" alt="Equipo corporativo LEBRONES SERVICES con uniformes navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+        <img src="assets/01_equipo_gemini.jpg" alt="Equipo corporativo LEBRONES SERVICES con uniformes navy" loading="lazy" decoding="async" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
       </div>
     </div>
   </div>
@@ -1350,7 +1448,7 @@
         </div>
         <h3>Fumigación y control de plagas</h3>
         <p>Control integrado de plagas para oficinas, almacenes e instalaciones industriales. Personal certificado y productos autorizados y biodegradables.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Control de roedores</li>
@@ -1384,7 +1482,7 @@
         </div>
         <h3>Limpieza empresarial</h3>
         <p>Limpieza general y especializada para entornos corporativos. Oficinas, recepciones, comedores. Desinfeccion de areas de alto contacto y cristalizacion de pisos.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Limpieza diaria, semanal, quincenal y mensual</li>
@@ -1416,7 +1514,7 @@
         </div>
         <h3>Aires acondicionados</h3>
         <p>Representante oficial de <strong>JOMLIA Solution Services</strong>. Brindamos instalacion, mantenimiento preventivo y correctivo de sistemas HVAC a traves de nuestra alianza estrategica.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Instalacion de equipos split, cassette e industriales</li>
@@ -1441,7 +1539,7 @@
         </div>
         <h3>Plantas electricas</h3>
         <p>Mantenimiento preventivo y correctivo de plantas electricas. Garantizamos el funcionamiento continuo de su respaldo energetico en todo momento.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Mantenimiento de generadores diesel y gas</li>
@@ -1467,7 +1565,7 @@
         </div>
         <h3>Jardineria corporativa</h3>
         <p>Diseno, instalacion y mantenimiento de areas verdes. Poda, riego, abonado, control fitosanitario y sistemas de riego automatizado.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Diseno y mantenimiento de areas verdes</li>
@@ -1494,7 +1592,7 @@
         </div>
         <h3>Outsourcing de personal</h3>
         <p>Suministro de personal capacitado, uniformado y supervisado para servicios generales. Un solo interlocutor para toda su operacion.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Seleccion y contratacion de personal operativo</li>
@@ -1519,7 +1617,7 @@
         </div>
         <h3>Seguros corporativos</h3>
         <p>Asesoria y colocacion de polizas colectivas e individuales para sus colaboradores. Activaciones con stand en sus instalaciones y capacitaciones INFOTEP sobre seguros para RRHH.</p>
-        <button class="svc-toggle" onclick="var c=this.closest('.svc-card');c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Ocultar':'Mostrar'">Mostrar</button>
+        <button class="svc-toggle" type="button" aria-expanded="false">Mostrar</button>
         <div class="svc-detail">
           <ul>
             <li>Polizas colectivas e individuales</li>
@@ -1558,7 +1656,7 @@
         </p>
       </div>
       <div class="alianza-logo reveal" data-delay="2">
-        <img src="assets/partners/JomliaLogo.png" alt="Jomlia Solutions — Alianza Estratégica" style="width:100%; height:auto; display:block;" />
+        <img src="assets/partners/jomlia-logo-nobg.png" alt="Jomlia Solutions — Alianza Estratégica" style="width:100%; height:auto; display:block;" />
       </div>
     </div>
   </div>
@@ -1575,27 +1673,27 @@
     </div>
     <div class="gallery-strip">
       <div class="gallery-item reveal" data-delay="1">
-        <img src="assets/02_limpieza_gemini.jpg" alt="Servicio de limpieza empresarial profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/02_limpieza_gemini.jpg" alt="Servicio de limpieza empresarial profesional" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Limpieza</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="2">
-        <img src="assets/03_fumigacion_gemini.jpg" alt="Servicio de fumigación profesional LEBRONES" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/03_fumigacion_gemini.jpg" alt="Servicio de fumigación profesional LEBRONES" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Fumigación</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="3">
-        <img src="assets/04_ac_gemini.jpg" alt="Mantenimiento de aires acondicionados" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/04_ac_gemini.jpg" alt="Mantenimiento de aires acondicionados" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>A/C</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="4">
-        <img src="assets/05_electricas_gemini.jpg" alt="Mantenimiento de plantas eléctricas" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/05_electricas_gemini.jpg" alt="Mantenimiento de plantas eléctricas" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Eléctricas</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="5">
-        <img src="assets/06_jardineria_gemini.jpg" alt="Servicio de jardinería profesional" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/06_jardineria_gemini.jpg" alt="Servicio de jardinería profesional" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Jardinería</span></div>
       </div>
       <div class="gallery-item reveal" data-delay="6">
-        <img src="assets/07_outsourcing_gemini.jpg" alt="Outsourcing de personal" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <img src="assets/07_outsourcing_gemini.jpg" alt="Outsourcing de personal" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
         <div class="overlay"><span>Personal</span></div>
       </div>
     </div>
@@ -1672,7 +1770,7 @@
       <!-- 1: Estándar -->
       <div class="uniform-card reveal" data-delay="1">
         <div class="card-img">
-          <img src="assets/u_estandar_gemini.jpg" alt="Uniforme estándar LEBRONES - Polo Deep Navy" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_estandar_gemini.jpg" alt="Uniforme estándar LEBRONES - Polo Deep Navy" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme estándar</h4>
@@ -1686,7 +1784,7 @@
       <!-- 2: Mantenimiento -->
       <div class="uniform-card reveal" data-delay="2">
         <div class="card-img">
-          <img src="assets/u_tecnico_gemini.jpg" alt="Uniforme técnico LEBRONES - Polo navy con herramientas" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_tecnico_gemini.jpg" alt="Uniforme técnico LEBRONES - Polo navy con herramientas" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme técnico</h4>
@@ -1701,7 +1799,7 @@
       <!-- 3: Fumigación -->
       <div class="uniform-card reveal" data-delay="3">
         <div class="card-img">
-          <img src="assets/u_fumigacion_gemini.jpg" alt="Uniforme fumigación LEBRONES - Traje protector blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_fumigacion_gemini.jpg" alt="Uniforme fumigación LEBRONES - Traje protector blanco" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme fumigación</h4>
@@ -1716,7 +1814,7 @@
       <!-- 4: Jardinería -->
       <div class="uniform-card reveal" data-delay="4">
         <div class="card-img">
-          <img src="assets/u_jardineria_gemini.jpg" alt="Uniforme jardinería LEBRONES - Polo navy con gorra" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_jardineria_gemini.jpg" alt="Uniforme jardinería LEBRONES - Polo navy con gorra" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme jardinería</h4>
@@ -1730,7 +1828,7 @@
       <!-- 5: Supervisor -->
       <div class="uniform-card reveal" data-delay="5">
         <div class="card-img">
-          <img src="assets/u_supervisor_gemini.jpg" alt="Uniforme supervisor SST LEBRONES - Chaleco navy y casco blanco" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
+          <img src="assets/u_supervisor_gemini.jpg" alt="Uniforme supervisor SST LEBRONES - Chaleco navy y casco blanco" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;">
         </div>
         <div class="card-body">
           <h4>Uniforme supervisor</h4>
@@ -1774,21 +1872,21 @@
         <div class="form-row">
           <div class="field">
             <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre" type="text" required placeholder="Ej. Juan Pérez" />
+            <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Ej. Juan Pérez" />
           </div>
           <div class="field">
             <label for="empresa">Empresa</label>
-            <input id="empresa" name="empresa" type="text" required placeholder="Razón social" />
+            <input id="empresa" name="empresa" type="text" required autocomplete="organization" placeholder="Razón social" />
           </div>
         </div>
         <div class="form-row">
           <div class="field">
             <label for="telefono">Teléfono</label>
-            <input id="telefono" name="telefono" type="tel" required placeholder="(809) 000-0000" />
+            <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="(809) 000-0000" />
           </div>
           <div class="field">
             <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" required placeholder="usted@empresa.com" />
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="usted@empresa.com" />
           </div>
         </div>
         <div class="field">
@@ -1810,7 +1908,7 @@
         </div>
         <div style="margin-top:8px;">
           <button type="submit" class="btn btn-gold">Enviar mensaje</button>
-          <span id="formStatus" style="margin-left:14px;font-size:13px;color:var(--silver);"></span>
+          <span id="formStatus" role="status" aria-live="polite" aria-atomic="true"></span>
         </div>
       </form>
 
@@ -1904,92 +2002,81 @@
 </footer>
 
 <script>
-  // ----- Navbar scroll state -----
+  'use strict';
+
+  // ─── Navbar scroll state ───────────────────────────────────────────────────
   const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 24) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  };
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ----- Mobile menu -----
-  const ham = document.getElementById('hamburger');
+  // ─── Mobile menu ──────────────────────────────────────────────────────────
+  const ham        = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const toggleMenu = (force) => {
     const open = force !== undefined ? force : !ham.classList.contains('open');
     ham.classList.toggle('open', open);
     mobileMenu.classList.toggle('open', open);
-    ham.setAttribute('aria-expanded', open);
+    ham.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
   };
   ham.addEventListener('click', () => toggleMenu());
-  mobileMenu.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+  mobileMenu.querySelectorAll('[data-close]').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+  // Cerrar menú con Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) toggleMenu(false);
+  });
 
-  // ----- Hero stagger entry -----
+  // ─── Hero stagger entry ───────────────────────────────────────────────────
   requestAnimationFrame(() => {
     document.getElementById('heroStagger').classList.add('in');
   });
 
-  // ----- Parallax (translate based on scroll) -----
+  // ─── Parallax ─────────────────────────────────────────────────────────────
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarse = window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 720;
   if (!prefersReducedMotion && !isCoarse) {
-    const parallaxItems = Array.from(document.querySelectorAll('[data-parallax]')).map(el => {
-      const speed = parseFloat(el.dataset.parallax) || 0;
-      // capture original transform (if any) so we can compose
-      const base = el.style.transform || '';
-      return { el, speed, base };
-    });
-
+    const parallaxItems = Array.from(document.querySelectorAll('[data-parallax]')).map(el => ({
+      el, speed: parseFloat(el.dataset.parallax) || 0, base: el.style.transform || ''
+    }));
     let ticking = false;
-    const update = () => {
+    const updateParallax = () => {
       const y = window.scrollY;
-      for (const item of parallaxItems) {
-        // each element's parallax is relative to its own offset from viewport
-        const rect = item.el.getBoundingClientRect();
-        const elTop = rect.top + y;
-        // distance scrolled past element's top (negative when below viewport)
-        const dist = y + window.innerHeight * 0.5 - (elTop + rect.height * 0.5);
-        const offset = dist * item.speed;
-        item.el.style.transform = `${item.base} translate3d(0, ${offset.toFixed(2)}px, 0)`.trim();
+      for (const { el, speed, base } of parallaxItems) {
+        const r   = el.getBoundingClientRect();
+        const mid = r.top + y + r.height * 0.5;
+        const off = (y + window.innerHeight * 0.5 - mid) * speed;
+        el.style.transform = `${base} translate3d(0,${off.toFixed(2)}px,0)`.trim();
       }
       ticking = false;
     };
-    const onParallaxScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    };
-    window.addEventListener('scroll', onParallaxScroll, { passive: true });
-    window.addEventListener('resize', onParallaxScroll, { passive: true });
-    update();
+    const scheduleParallax = () => { if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; } };
+    window.addEventListener('scroll', scheduleParallax, { passive: true });
+    window.addEventListener('resize', scheduleParallax, { passive: true });
+    updateParallax();
   }
 
-  // ----- Reveal on scroll -----
-  const io = new IntersectionObserver((entries) => {
+  // ─── Reveal on scroll ─────────────────────────────────────────────────────
+  const revealIO = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }, { threshold: 0.12, rootMargin: '0px 0px -56px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 
-  // ----- Counter-up -----
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  // ─── Counter-up ───────────────────────────────────────────────────────────
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
   const animateCount = (el) => {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
-    const dur = 1400;
-    const start = performance.now();
-    const tick = (now) => {
+    const dur    = 1400;
+    const start  = performance.now();
+    const tick   = (now) => {
       const t = Math.min(1, (now - start) / dur);
-      const v = Math.round(target * easeOut(t));
-      el.textContent = prefix + v + suffix;
+      el.textContent = prefix + Math.round(target * easeOut(t)) + suffix;
       if (t < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -2004,21 +2091,62 @@
   }, { threshold: 0.4 });
   document.querySelectorAll('.num[data-target]').forEach(el => countIO.observe(el));
 
-  // ----- Form (presentation piece) -----
-  const form = document.getElementById('contactForm');
+  // ─── Servicio toggle — event delegation + aria-expanded ───────────────────
+  document.querySelectorAll('.services-grid').forEach(grid => {
+    grid.addEventListener('click', e => {
+      const btn = e.target.closest('.svc-toggle');
+      if (!btn) return;
+      const card   = btn.closest('.svc-card');
+      const isOpen = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.textContent = isOpen ? 'Ocultar' : 'Mostrar';
+    });
+  });
+
+  // ─── Nav scrollspy ────────────────────────────────────────────────────────
+  const spySections = document.querySelectorAll('section[id]');
+  const spyLinks    = document.querySelectorAll('.nav-links a[href^="#"]');
+  const setActive   = (id) => {
+    spyLinks.forEach(a => {
+      const match = a.getAttribute('href') === `#${id}`;
+      a.classList.toggle('spy-active', match);
+      a.setAttribute('aria-current', match ? 'page' : 'false');
+    });
+  };
+  const spyIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+  }, { threshold: 0, rootMargin: '-30% 0px -60% 0px' });
+  spySections.forEach(s => spyIO.observe(s));
+
+  // ─── Back-to-top ──────────────────────────────────────────────────────────
+  const backTopBtn = document.getElementById('backTop');
+  const toggleBackTop = () => backTopBtn.classList.toggle('show', window.scrollY > 400);
+  window.addEventListener('scroll', toggleBackTop, { passive: true });
+  backTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ─── Form ─────────────────────────────────────────────────────────────────
+  const form   = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
-      status.textContent = 'Por favor complete los campos requeridos.';
-      status.style.color = '#d99';
+      status.textContent = 'Por favor complete todos los campos requeridos.';
+      status.style.color = '#e07070';
+      // Foco en primer campo inválido para accesibilidad
+      const firstInvalid = form.querySelector(':invalid');
+      if (firstInvalid) firstInvalid.focus();
       return;
     }
-    status.textContent = '✦ Mensaje enviado. Le contactaremos pronto.';
+    status.textContent = '✦ Mensaje enviado. Le contactaremos en menos de 24 horas.';
     status.style.color = 'var(--gold)';
     form.reset();
   });
 </script>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="Volver al inicio" type="button">
+  <svg viewBox="0 0 16 16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3M3 8l5-5 5 5"/></svg>
+</button>
 
 <!-- WhatsApp floating button -->
 <a href="https://wa.me/18492552077" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
